@@ -53,6 +53,8 @@ for path in paths:
         df = pd.read_csv(file, sep=None, engine='python')
         df['datetime'] = pd.to_datetime(df['date'] + ' '+ df['time'])
         df = df.drop(['date', 'time'], axis=1)
+        if 'GPS' in os.path.basename(file):
+            df = df.dropna(how='any')
         data.append(df)
     data_merged = reduce(lambda left, right: pd.merge(left, right,
                                                       on='datetime',
@@ -97,7 +99,7 @@ for path in paths:
     
     # Format datetime object to desired format (YYYYMMDDHHMMSSZ)
     formatted_timestamp = timestamp_dt.strftime('%Y%m%d%H%M%S') + 'Z'
-    
     # Save to a NetCDF fileR
     ds.to_netcdf(save_path + f'UASDC_{operatorID}_{airframeID}_{formatted_timestamp}.nc')
     
+
