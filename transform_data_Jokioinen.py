@@ -14,7 +14,7 @@ dir_in = r"C:\Users\le\OneDrive - Ilmatieteen laitos\WMO-DC\Jokioinen/"
 sub_dir = [f.path for f in os.scandir(dir_in) if f.is_dir()]
 subsub_dir = [f.path for dirdir_in in sub_dir for f in os.scandir(dirdir_in)  if f.is_dir() and 'calibration' not in f.path]
 save_path = sub_dir[-1] + '/'
-paths = [x + '/' for x in subsub_dir[:-1]]
+paths = [x + '/' for x in subsub_dir]
 
 # %%
 # Define meta data
