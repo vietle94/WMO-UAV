@@ -11,16 +11,19 @@ from functools import reduce
 dir_in = r"C:\Users\le\OneDrive - Ilmatieteen laitos\WMO-DC\Pallas\mSKW/"
 
 # %%
+# Define meta data
+operatorID = '049'
+airframeID = 'mskw'
+platform_name = 'mSKW'
+flight_id = 'Pallas_1000m_VP'
+
+# %%
 sub_dir = [f.path for f in os.scandir(dir_in) if f.is_dir()]
 save_path = sub_dir[-1] + '/'
 paths = [x + '/' for x in sub_dir[:-1]]
 
 for path in paths:
-    # Define meta data
-    operatorID = '49'
-    airframeID = 'mskw'
-    platform_name = 'mSKW'
-    flight_id = 'Pallas_1000m_VP'
+
     
     rename_dict = {
         ' lat' : 'lat',
