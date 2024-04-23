@@ -3,7 +3,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import glob
 import os
-import merge_sensor_data
 import xarray as xr
 from functools import reduce
 

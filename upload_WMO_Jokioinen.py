@@ -55,4 +55,8 @@ page_iterator = paginator.paginate(Bucket=bucket_name)
 
 for page in page_iterator:
     for item in page['Contents']:
-        print(item['Key'])
+        if '/050/' in item['Key']:
+            print(item['Key'])
+        
+# %%
+item
