@@ -30,7 +30,7 @@ for path in paths:
         ' alt' : 'altitude',
         'temp_bme': 'air_temperature',
         'rh_bme' : 'relative_humidity',
-        'press_bme' : 'pressure',
+        'press_bme' : 'air_pressure',
     }
     
     file_type = '/*.csv'
@@ -71,7 +71,7 @@ for path in paths:
     ds['air_temperature'].attrs = {'units': 'Kelvin', 'long_name': 'Air Temperature', '_FillValue': float('nan'), 'processing_level': ''}
     ds['humidity_mixing_ratio'].attrs = {'units': 'kg/kg', 'long_name': 'Humidity Mixing Ratio', '_FillValue': float('nan'), 'processing_level': ''}
     ds['relative_humidity'].attrs = {'units': '%', 'long_name': 'Relative Humidity', '_FillValue': float('nan'), 'processing_level': ''}
-    ds['pressure'].attrs = {'units': 'Pa', 'long_name': 'Atmospheric Pressure', '_FillValue': float('nan'), 'processing_level': ''}
+    ds['air_pressure'].attrs = {'units': 'Pa', 'long_name': 'Atmospheric Pressure', '_FillValue': float('nan'), 'processing_level': ''}
         
     # Add Global Attributes
     ds.attrs['Conventions'] = "CF-1.8, WMO-CF-1.0"
