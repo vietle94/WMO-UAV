@@ -78,7 +78,7 @@ for path in paths:
         
     # Add Global Attributes
     ds.attrs['Conventions'] = "CF-1.8, WMO-CF-1.0"
-    ds.attrs['wmo__cf_profile'] = "GS_wxhive_admin"
+    ds.attrs['wmo__cf_profile'] = "FM 303-2024"
     ds.attrs['featureType'] = "vertical_profile"
     ds.attrs['platform_name'] = platform_name # example "GS_weatherhive"
     ds.attrs['flight_id'] = flight_id # example: "JBCC_1500m_VP"
