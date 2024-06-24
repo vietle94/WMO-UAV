@@ -72,6 +72,9 @@ for path in paths:
     # Convert Air Temperature from Celsius to Kelvin
     ds['air_temperature'] = ds['air_temperature'] + 273.15
     
+    # Convert Air pressure to Pa
+    ds['air_pressure'] = 100 * ds['air_pressure']
+    
     # Adding a REQUIRED Variable to the Dataset 
     ds['humidity_mixing_ratio'] = np.nan
     
