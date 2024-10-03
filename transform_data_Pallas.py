@@ -19,7 +19,7 @@ flight_id = 'Pallas_1000m_VP'
 # %%
 sub_dir = [f.path for f in os.scandir(dir_in) if f.is_dir()]
 save_path = sub_dir[-1] + '/'
-paths = [x + '/' for x in sub_dir[:-1]]
+paths = [x + '/' for x in sub_dir[:-2]]
 
 for path in paths:
 
@@ -47,7 +47,8 @@ for path in paths:
                                                       on='datetime',
                                                       how='inner'),
                          data)
-    pd_time = data_merged['datetime']
+
+    pd_time = data_merged['datetime'] - np.timedelta64(3, 'h') # UTC time
     
     data_merged = data_merged.rename(rename_dict, axis=1)
     data_merged = data_merged[[v for _, v in rename_dict.items()]]

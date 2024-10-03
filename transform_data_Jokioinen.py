@@ -59,7 +59,7 @@ for path in paths:
                                                       on='datetime',
                                                       how='inner'),
                          data)
-    pd_time = data_merged['datetime']
+    pd_time = data_merged['datetime'] - np.timedelta64(3, 'h') # UTC time
     
     data_merged = data_merged.rename(rename_dict, axis=1)
     data_merged = data_merged[[v for _, v in rename_dict.items()]]
