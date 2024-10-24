@@ -107,10 +107,11 @@ for path in paths[:-1]:
     # Save to a NetCDF fileR
     ds.to_netcdf(save_path + f'UASDC_{operatorID}_{airframeID}_{formatted_timestamp}.nc')
 
-    fig, ax = plt.subplots(3, 1, figsize=(9, 6), sharex=True, constrained_layout=True)
-    ds.air_temperature.plot(ax=ax[0])
-    ds.relative_humidity.plot(ax=ax[1])
-    ds.air_pressure.plot(ax=ax[2])
+    fig, ax = plt.subplots(2, 2, figsize=(9, 6), sharex=True, constrained_layout=True)
+    ds.air_temperature.plot(ax=ax[0, 0])
+    ds.relative_humidity.plot(ax=ax[1, 0])
+    ds.air_pressure.plot(ax=ax[0, 1])
+    ds.altitude.plot(ax=ax[1, 1])
     for ax_ in ax.flatten():
         ax_.grid()
     fig.savefig(save_path + f'UASDC_{operatorID}_{airframeID}_{formatted_timestamp}.png',
