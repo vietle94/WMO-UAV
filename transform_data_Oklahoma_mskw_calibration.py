@@ -6,25 +6,25 @@ import os
 import xarray as xr
 from functools import reduce
 
-# # %%
-# dir_in = r"C:\Users\le\OneDrive - Ilmatieteen laitos\WMO-DC\Oklahoma\calibration\mSKW1/"
-
-# # %%
-# # Define meta data
-# operatorID = '049'
-# airframeID = 'mskw1'
-# platform_name = 'mSKW1'
-# flight_id = 'Oklahoma_1000m_calibration'
-
 # %%
-dir_in = r"C:\Users\le\OneDrive - Ilmatieteen laitos\WMO-DC\Oklahoma\calibration\mSKW2/"
+dir_in = r"C:\Users\le\OneDrive - Ilmatieteen laitos\WMO-DC\Oklahoma\calibration\mSKW1/"
 
 # %%
 # Define meta data
 operatorID = '049'
-airframeID = 'mskw'
+airframeID = 'mskw1'
 platform_name = 'mSKW'
 flight_id = 'Oklahoma_1000m_calibration'
+
+# # %%
+# dir_in = r"C:\Users\le\OneDrive - Ilmatieteen laitos\WMO-DC\Oklahoma\calibration\mSKW2/"
+
+# # %%
+# # Define meta data
+# operatorID = '049'
+# airframeID = 'mskw2'
+# platform_name = 'mSKW'
+# flight_id = 'Oklahoma_1000m_calibration'
 
 # %%
 sub_dir = [f.path for f in os.scandir(dir_in) if f.is_dir()]

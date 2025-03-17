@@ -12,7 +12,7 @@ dir_in = r"C:\Users\le\OneDrive - Ilmatieteen laitos\WMO-DC\Oklahoma\mSKW2/"
 # %%
 # Define meta data
 operatorID = '049'
-airframeID = 'mskw'
+airframeID = 'mskw2'
 platform_name = 'mSKW'
 flight_id = 'Oklahoma_1000m_VP'
 
