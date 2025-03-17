@@ -17,7 +17,7 @@ paths = [x + '/' for x in sub_dir]
 # %%
 # Define meta data
 operatorID = '049'
-airframeID = 'mavic24'
+airframeID = 'mav24'
 platform_name = 'Mavic 2 bp4'
 flight_id = 'Oklahoma_1000m_calibration'
 
